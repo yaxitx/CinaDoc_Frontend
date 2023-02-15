@@ -1,10 +1,10 @@
-import 'package:cinadoc/common/theme_helper.dart';
-import 'package:cinadoc/login.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:cinadoc/common/theme_helper2.dart';
 
-class Register extends StatelessWidget {
-  const Register({super.key});
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,30 +12,29 @@ class Register extends StatelessWidget {
       theme: ThemeData(fontFamily: "SFPRODISPLAYMEDIUM"),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/back222.png"),
-              fit: BoxFit.cover,
-            ),
+          body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/back222.png"),
+            fit: BoxFit.cover,
           ),
-          child: RegistarPage(),
         ),
-      ),
+        child: LoginPage(),
+      )),
     );
   }
 }
 
-class RegistarPage extends StatefulWidget {
-  const RegistarPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegistarPage> createState() => _RegistarPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegistarPageState extends State<RegistarPage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -81,51 +80,28 @@ class _RegistarPageState extends State<RegistarPage> {
               margin: EdgeInsets.only(top: 20),
               child: Center(
                 child: TextField(
-                  decoration: ThemeHelper().textInputDecoration(
+                  decoration: ThemeHelper2().textInputDecoration(
                     "User Name",
                     "Enter your user name",
                   ),
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
-              margin: EdgeInsets.only(top: 10),
-              child: Center(
-                child: TextField(
-                  decoration: ThemeHelper().textInputDecoration(
-                    "Email",
-                    "Enter your email",
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
-              margin: EdgeInsets.only(top: 10),
-              child: Center(
-                child: TextField(
-                  decoration: ThemeHelper().textInputDecoration(
-                    "Phone Number",
-                    "Enter your Phone Number",
-                  ),
-                  keyboardType: TextInputType.phone,
-                ),
-              ),
-            ),
+
             Container(
               padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
               margin: EdgeInsets.only(top: 10),
               child: Center(
                 child: TextField(
                   obscureText: true,
-                  decoration: ThemeHelper().textInputDecoration(
+                  decoration: ThemeHelper2().textInputDecoration(
                     "Password",
                     "Enter your password",
                   ),
                 ),
               ),
             ),
+
             Container(
               margin: EdgeInsets.only(top: 8),
               child: Center(
@@ -164,7 +140,7 @@ class _RegistarPageState extends State<RegistarPage> {
               child: GestureDetector(
                 // onTap: () {
                 //   Navigator.pushReplacement(context,
-                //       MaterialPageRoute(builder: (_) => const LoginPage()));
+                //       MaterialPageRoute(builder: (_) => const Register()));
                 // },
                 child: Container(
                   margin: const EdgeInsets.only(top: 60, left: 30, right: 30),
@@ -175,7 +151,7 @@ class _RegistarPageState extends State<RegistarPage> {
                       borderRadius: BorderRadius.circular(15)),
                   child: Center(
                     child: Text(
-                      "SIGN UP",
+                      "SIGN IN",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
