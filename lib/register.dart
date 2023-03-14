@@ -1,4 +1,5 @@
 import 'package:cinadoc/common/theme_helper.dart';
+import 'package:cinadoc/home.dart';
 import 'package:cinadoc/login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -162,10 +163,10 @@ class _RegistarPageState extends State<RegistarPage> {
 
             Container(
               child: GestureDetector(
-                // onTap: () {
-                //   Navigator.pushReplacement(context,
-                //       MaterialPageRoute(builder: (_) => const LoginPage()));
-                // },
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => const LoginPage()));
+                },
                 child: Container(
                   margin: const EdgeInsets.only(top: 60, left: 30, right: 30),
                   padding: const EdgeInsets.all(15),
