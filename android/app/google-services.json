@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "738448927158",
+    "project_id": "cina-doc",
+    "storage_bucket": "cina-doc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738448927158:android:8d2ebac1ed8ccc77203917",
+        "android_client_info": {
+          "package_name": "com.example.cinadoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738448927158-57u1qsttljm769q6qoi0a45adojhq1bc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzlT_lGOU-xM14kzn3YkKAPBg7CdB7VW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738448927158-57u1qsttljm769q6qoi0a45adojhq1bc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

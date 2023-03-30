@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -36,6 +38,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _emailController=TextEditingController();
+  final _passwordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,9 +84,10 @@ class _LoginPageState extends State<LoginPage> {
             margin: EdgeInsets.only(top: 20),
             child: Center(
               child: TextField(
+                controller: _emailController,
                 decoration: ThemeHelper2().textInputDecoration(
-                  "User Name",
-                  "Enter your user name",
+                  "Email",
+                  "Enter your Email",
                 ),
               ),
             ),
@@ -93,6 +98,7 @@ class _LoginPageState extends State<LoginPage> {
             margin: EdgeInsets.only(top: 10),
             child: Center(
               child: TextField(
+                controller: _passwordController,
                 obscureText: true,
                 decoration: ThemeHelper2().textInputDecoration(
                   "Password",
@@ -139,8 +145,14 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             child: GestureDetector(
               onTap: () {
+                FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text).then((value) {
+            
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (_) => const HomePage()));
+              
+                }).onError((error, stackTrace){
+                  print("Account not found");
+                });
               },
               child: Container(
                 margin: const EdgeInsets.only(top: 200, left: 30, right: 30),
