@@ -1,3 +1,4 @@
+import 'package:cinadoc/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -161,25 +162,48 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 15),
-            child: const Text.rich(TextSpan(children: <TextSpan>[
-              TextSpan(
-                  text: "Already have an account?",
-                  style: TextStyle(
-                      color: const Color.fromARGB(
-                        255,
-                        117,
-                        60,
-                        0,
-                      ),
-                      fontWeight: FontWeight.w500)),
-              TextSpan(
-                  text: " Sign in",
+          // Container(
+          //   margin: EdgeInsets.only(top: 15),
+          //   child: const Text.rich(TextSpan(children: <TextSpan>[
+          //     TextSpan(
+          //         text: "Already have an account?",
+          //         style: TextStyle(
+          //             color: const Color.fromARGB(
+          //               255,
+          //               117,
+          //               60,
+          //               0,
+          //             ),
+          //             fontWeight: FontWeight.w500)),
+          //     TextSpan(
+          //         text: " Sign in",
+          //         style: TextStyle(
+          //             color: Color.fromARGB(255, 221, 142, 51),
+          //             fontWeight: FontWeight.w500))
+          //   ])),
+          // )
+
+          SizedBox(
+            height: 10,
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Don't have an account? "),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RegistarPage()));
+                },
+                child: Text(
+                  "Sign Up",
                   style: TextStyle(
                       color: Color.fromARGB(255, 221, 142, 51),
-                      fontWeight: FontWeight.w500))
-            ])),
+                      fontWeight: FontWeight.w500),
+                ),
+              )
+            ],
           )
         ],
       ),

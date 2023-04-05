@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:cinadoc/about.dart';
 import 'package:cinadoc/scanner.dart';
 import 'package:cinadoc/common/products.dart';
+import 'package:cinadoc/tips.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -93,11 +95,23 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.bold),
                       ),
                       Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const aboutPage()));
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage("assets/images/about.png"))),
+                            padding: EdgeInsets.all(26),
+                          ),
                         ),
-                        padding: EdgeInsets.all(26),
                       ),
                     ],
                   ),
@@ -209,7 +223,9 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Column(
                             children: [
-                              CinnamonProducts(),
+                              CinnamonProducts(
+                                imagePath: "assets/images/products/Powder.jpg",
+                              ),
                               SizedBox(
                                 height: 10,
                               ),
@@ -224,27 +240,31 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Column(
                             children: [
-                              CinnamonProducts(),
+                              CinnamonProducts(
+                                imagePath: "assets/images/products/Tea.jpeg",
+                              ),
                               SizedBox(
                                 height: 10,
                               ),
                               Text(
-                                "Cinnamon",
+                                "Cinnamon Tea",
                                 style: TextStyle(color: Colors.white),
                               )
                             ],
                           ),
                           SizedBox(
-                            width: 42,
+                            width: 35,
                           ),
                           Column(
                             children: [
-                              CinnamonProducts(),
+                              CinnamonProducts(
+                                imagePath: "assets/images/products/Cuts.jpg",
+                              ),
                               SizedBox(
                                 height: 10,
                               ),
                               Text(
-                                "Cinnamon",
+                                "Cinnamon Cuts",
                                 style: TextStyle(color: Colors.white),
                               )
                             ],
@@ -320,6 +340,11 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const CameraPage()),
+                  );
+                } else if (index == 2) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const TipsPage()),
                   );
                 }
               }),

@@ -74,6 +74,12 @@ flutter:
     - assets/images/back222.png
     - assets/images/back3.png
     - assets/images/home_back.png
+    - assets/images/products/Powder.jpg
+    - assets/images/products/Tea.jpeg
+    - assets/images/products/Cuts.jpg
+    - assets/images/logo.jpeg
+    - assets/images/about.png
+    - assets/images/RB.jpeg
 
   
 fonts:
