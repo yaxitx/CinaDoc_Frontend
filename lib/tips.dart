@@ -138,15 +138,15 @@ class _TipsPageState extends State<TipsPage> {
                     color: Color.fromARGB(255, 224, 224, 224),
                     shadowColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: Column(
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            topRight: Radius.circular(30),
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
                           ),
                           child: Image(
                             image: AssetImage('assets/images/RB.jpeg'),
@@ -199,15 +199,15 @@ class _TipsPageState extends State<TipsPage> {
                     color: Color.fromARGB(255, 224, 224, 224),
                     shadowColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: Column(
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            topRight: Radius.circular(30),
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15),
                           ),
                           child: Image(
                             image: AssetImage('assets/images/SC.jpeg'),
