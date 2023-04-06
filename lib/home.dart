@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Hi Clara",
+                        "Welcome!",
                         style: TextStyle(
                             color: const Color.fromARGB(255, 117, 60, 0),
                             fontSize: 27,
@@ -361,7 +361,7 @@ class _HomePageState extends State<HomePage> {
               color: Color.fromARGB(255, 117, 60, 0),
             ),
             Icon(
-              Icons.notifications,
+              Icons.tips_and_updates_sharp,
               color: Color.fromARGB(255, 117, 60, 0),
             ),
           ]),

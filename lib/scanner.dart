@@ -130,7 +130,7 @@ class _CameraPageState extends State<CameraPage> {
               color: Color.fromARGB(255, 117, 60, 0),
             ),
             Icon(
-              Icons.notifications,
+              Icons.tips_and_updates_sharp,
               color: Color.fromARGB(255, 117, 60, 0),
             ),
           ]),
@@ -177,8 +177,11 @@ class _CameraPageState extends State<CameraPage> {
                     height: 350,
                     fit: BoxFit.cover,
                   )
-                : Image.network(
-                    "https://i.gifer.com/origin/ae/aea3019ba3e50cf0b10006bf75c51e52_w200.gif"),
+                : Image(
+                    image: AssetImage("assets/images/logo.jpg"),
+                    width: 300,
+                    height: 350,
+                  ),
             SizedBox(
               height: 20,
             ),
