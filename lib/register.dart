@@ -197,25 +197,48 @@ class _RegistarPageState extends State<RegistarPage> {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 15),
-              child: const Text.rich(TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: "Already have an account?",
-                    style: TextStyle(
-                        color: const Color.fromARGB(
-                          255,
-                          117,
-                          60,
-                          0,
-                        ),
-                        fontWeight: FontWeight.w500)),
-                TextSpan(
-                    text: " Sign in",
+            // Container(
+            //   margin: EdgeInsets.only(top: 15),
+            //   child: const Text.rich(TextSpan(children: <TextSpan>[
+            //     TextSpan(
+            //         text: "Already have an account?",
+            //         style: TextStyle(
+            //             color: const Color.fromARGB(
+            //               255,
+            //               117,
+            //               60,
+            //               0,
+            //             ),
+            //             fontWeight: FontWeight.w500)),
+            //     TextSpan(
+            //         text: " Sign in",
+            //         style: TextStyle(
+            //             color: Color.fromARGB(255, 221, 142, 51),
+            //             fontWeight: FontWeight.w500))
+            //   ])),
+            // )
+
+            SizedBox(
+              height: 10,
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("Already have an account? "),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
+                  child: Text(
+                    "Sign in",
                     style: TextStyle(
                         color: Color.fromARGB(255, 221, 142, 51),
-                        fontWeight: FontWeight.w500))
-              ])),
+                        fontWeight: FontWeight.w500),
+                  ),
+                )
+              ],
             )
           ],
         ),
