@@ -1,6 +1,8 @@
 import 'package:cinadoc/common/theme_helper.dart';
 import 'package:cinadoc/home.dart';
 import 'package:cinadoc/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -37,6 +39,8 @@ class RegistarPage extends StatefulWidget {
 }
 
 class _RegistarPageState extends State<RegistarPage> {
+  final _emailController=TextEditingController();
+  final _passwordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -94,6 +98,7 @@ class _RegistarPageState extends State<RegistarPage> {
               margin: EdgeInsets.only(top: 10),
               child: Center(
                 child: TextField(
+                  controller: _emailController,
                   decoration: ThemeHelper().textInputDecoration(
                     "Email",
                     "Enter your email",
@@ -119,6 +124,7 @@ class _RegistarPageState extends State<RegistarPage> {
               margin: EdgeInsets.only(top: 10),
               child: Center(
                 child: TextField(
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: ThemeHelper().textInputDecoration(
                     "Password",
@@ -164,8 +170,13 @@ class _RegistarPageState extends State<RegistarPage> {
             Container(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const LoginPage()));
+                  FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text).then((value) {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Login();
+                    }));
+                  } ).onError((error, stackTrace){
+                    print("signup error");
+                  });
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 60, left: 30, right: 30),

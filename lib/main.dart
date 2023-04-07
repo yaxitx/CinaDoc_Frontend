@@ -1,7 +1,18 @@
+import 'package:cinadoc/login.dart';
 import 'package:cinadoc/register.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+
+    options: DefaultFirebaseOptions.currentPlatform,
+
+);
   runApp(const MyApp());
 }
 
@@ -169,13 +180,18 @@ class _GetStartPageState extends State<GetStartPage> {
                       text: "Already have an account?",
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.w500)),
-                  TextSpan(
-                      text: " Sign in",
+                
+                    
+                ])),
+              ), ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder:(context){
+                      return Login();
+                    }));
+              }, child: Text(
+                       " Sign in",
                       style: TextStyle(
                           color: Color.fromARGB(255, 221, 142, 51),
-                          fontWeight: FontWeight.w500))
-                ])),
-              )
+                          fontWeight: FontWeight.w500)))
             ],
           ),
         ),
